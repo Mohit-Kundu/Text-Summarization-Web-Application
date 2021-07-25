@@ -34,5 +34,4 @@ def scraper(url):
 
     string = remove_square_brackets_and_extra_spaces(article_text)
     body = remove_spl_chars_and_digits(article_text)
-    print(body)
-    print(len(body))
+    return body
