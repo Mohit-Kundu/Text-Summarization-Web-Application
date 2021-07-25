@@ -39,4 +39,23 @@ max_frequency = max(word_frequencies.values())
 for word in word_frequencies.keys():
     word_frequencies[word] /= max_frequency
 
-print(word_frequencies)
+#print(word_frequencies)
+
+# Sentence Tokenization
+sentence_tokens = [sent for sent in doc.sents]
+#print(sentence_tokens)
+
+# Calculating sentence scores
+sentence_scores = {}
+
+for sent in sentence_tokens:
+    for word in sent:
+        if word.text.lower() in word_frequencies.keys():
+            if sent not in sentence_scores.keys():
+                sentence_scores[sent] = word_frequencies[word.text.lower()]
+            else:
+                sentence_scores[sent] += word_frequencies[word.text.lower()]
+
+print(sentence_scores)
+
+
