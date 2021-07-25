@@ -1,7 +1,12 @@
 import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
 from string import punctuation
+
+# Importing webscraping function from scraper.py
 from scraper import scraper
+
+#Used to get sentences with highest score
+from heapq import nlargest
 
 stopwords = list(STOP_WORDS)
 #print(stopwords)
@@ -56,6 +61,19 @@ for sent in sentence_tokens:
             else:
                 sentence_scores[sent] += word_frequencies[word.text.lower()]
 
-print(sentence_scores)
+#print(sentence_scores)
 
+# Getting Sentences with highest scores
+sentences_selected = int(len(sentence_tokens)*0.2)
+#print(sentences_selected)
+
+summary_sentences = nlargest(sentences_selected, sentence_scores, key = sentence_scores.get)
+#print(summary_sentences)
+final_summary = [word.text for word in summary_sentences]
+summary = " ".join(final_summary)
+print(summary)
+
+'''Comparing length of original text with summary'''
+#print(len(text))
+#print(len(summary))
 
