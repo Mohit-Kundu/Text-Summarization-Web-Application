@@ -4,7 +4,7 @@ from string import punctuation
 from scraper import scraper
 
 stopwords = list(STOP_WORDS)
-print(stopwords)
+#print(stopwords)
 
 nlp = spacy.load('en_core_web_sm')
 
@@ -24,9 +24,19 @@ for word in doc:
     if word.text.lower() not in stopwords:
         if word.text.lower() not in punctuation:
             if word.text.lower() not in word_frequencies.keys():
-                #Adding new word to word_freequeny
+                # Adding new word to word_frequency
                 word_frequencies[word.text.lower()] = 1
             else:
+                # Incrementing frequency in word already exists
                 word_frequencies[word.text.lower()] += 1
+
+#print(word_frequencies)
+
+# Normalizing Frequencies
+max_frequency = max(word_frequencies.values())
+#print(max_frequency)
+
+for word in word_frequencies.keys():
+    word_frequencies[word] /= max_frequency
 
 print(word_frequencies)
