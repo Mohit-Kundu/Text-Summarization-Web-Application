@@ -64,7 +64,8 @@ for sent in sentence_tokens:
 #print(sentence_scores)
 
 # Getting Sentences with highest scores
-sentences_selected = int(len(sentence_tokens)*0.2)
+sentences_percent = 0.2
+sentences_selected = int(len(sentence_tokens)*sentences_percent)
 #print(sentences_selected)
 
 summary_sentences = nlargest(sentences_selected, sentence_scores, key = sentence_scores.get)
