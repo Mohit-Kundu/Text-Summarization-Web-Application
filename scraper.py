@@ -14,6 +14,8 @@ def scraper(url):
 
     parsed_article = bs.BeautifulSoup(data, 'lxml')
 
+    title = parsed_article.find('h1')
+
     paragraphs = parsed_article.find_all('p')
 
     for p in paragraphs:
@@ -25,4 +27,4 @@ def scraper(url):
         return re.sub(r'\s+', ' ', article_text)
 
     body = remove_square_brackets(article_text)
-    return body
+    return title, body
