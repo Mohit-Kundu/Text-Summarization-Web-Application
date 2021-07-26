@@ -5,7 +5,7 @@ from string import punctuation
 # Importing webscraping function from scraper.py
 from scraper import scraper
 
-#Used to get sentences with highest score
+# Used to rank sentences according sentence scores
 from heapq import nlargest
 
 stopwords = list(STOP_WORDS)
