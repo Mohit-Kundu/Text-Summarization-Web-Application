@@ -14,7 +14,8 @@ stopwords = list(STOP_WORDS)
 nlp = spacy.load('en_core_web_sm')
 
 # Scraping text from article
-text = scraper('https://en.wikipedia.org/wiki/Natural_language_processing')
+url = 'https://en.wikipedia.org/wiki/Natural_language_processing'
+title, text = scraper(url)
 
 # Saving tokenized sentence
 doc = nlp(text)
@@ -72,6 +73,7 @@ summary_sentences = nlargest(sentences_selected, sentence_scores, key = sentence
 #print(summary_sentences)
 final_summary = [word.text for word in summary_sentences]
 summary = " ".join(final_summary)
+print(title)
 print(summary)
 
 '''Comparing length of original text with summary'''
