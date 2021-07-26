@@ -14,7 +14,7 @@ def scraper(url):
 
     parsed_article = bs.BeautifulSoup(data, 'lxml')
 
-    title = parsed_article.find('h1')
+    title = parsed_article.find('h1').text
 
     paragraphs = parsed_article.find_all('p')
 
