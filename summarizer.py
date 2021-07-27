@@ -15,6 +15,7 @@ nlp = spacy.load('en_core_web_sm')
 
 # Scraping text from article
 url = 'https://en.wikipedia.org/wiki/Natural_language_processing'
+#url = 'https://edition.cnn.com/2021/07/13/football/italy-victory-euro-2020-renaissance-spt-intl/index.html'
 title, text = scraper(url)
 
 # Saving tokenized sentence
