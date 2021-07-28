@@ -9,16 +9,18 @@
 </head>
 
 <body>
-  <div id='side_text'>
+  <div class='side_text'>
     <h2>Text Summarizer</h2>
   </div>
-  <div id=container>
-    <label id='labeL_url'>Paste url of content below</label><br>
+  <div class = 'container'>
+    <label class='labeL_url'>Paste url of content below</label><br>
     <form action = '#', method ='POST'>
-      <input type = 'url' name = 'url' type = 'url' placeholder='https://en.wikipedia.org/wiki/Internet'><br>
-      <button name = 'summarize_btn' type = 'sumamrize_btn'>Summarize</button>
+      <input type = 'url' name = 'url' placeholder='https://en.wikipedia.org/wiki/Internet'><br>
+      <button name = 'summarize_btn' class = 'summarize_btn'>Summarize</button>
     </form>
-    <textarea></textarea>
+    <div class = 'summary'>
+      {% block content %} {% endblock %}
+    </div>
   </div>
 </body>
 
