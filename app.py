@@ -9,7 +9,7 @@ app.config["JSON_AS_ASCII"] = False
 def index():
     if request.method == 'POST':
         url = request.form.get('url')
-        title, text = scraper(url)
+        text = scraper(url)
         summary = summarizer(text)
         return render_template("index.html", summary = summary)
 
