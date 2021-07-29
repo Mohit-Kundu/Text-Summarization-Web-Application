@@ -2,26 +2,24 @@
 <html lang=en>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <link rel='stylesheet' href="{{ url_for('static', filename = 'css/main.css') }}" }>
-  <title>Text Summarizer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel='stylesheet' href="{{ url_for('static', filename = 'css/main.css') }}" }>
+    <title>Text Summarizer</title>
 </head>
 
 <body>
-  <div class='side_text'>
-    <h2>Text Summarizer</h2>
-  </div>
-  <div class = 'container'>
-    <label class='labeL_url'>Paste url of content below</label><br>
-    <form action = '#', method ='POST'>
-      <input type = 'url' name = 'url' placeholder='https://en.wikipedia.org/wiki/Internet'><br>
-      <button name = 'summarize_btn' class = 'summarize_btn'>Summarize</button>
-    </form>
-    <div class = 'summary'>
-      {% block content %} {% endblock %}
+    <div class='side_text'>
+        <h2>Text Summarizer</h2>
     </div>
-  </div>
+    <div class='container'>
+        <label class='labeL_url'>Paste url of content below</label><br>
+        <form action='#' , method='POST'>
+            <input type='url' name='url' placeholder='https://en.wikipedia.org/wiki/Internet'><br>
+            <button name='summarize_btn' class='summarize_btn'>Summarize</button>
+        </form>
+    </div>
+    <textarea> {{ summary }} </textarea>
 </body>
 
 </html>
