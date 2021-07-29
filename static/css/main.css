@@ -1,22 +1,29 @@
 h2{
-    text-align: center;
-    padding: 10px 20px;
     background-color: black;
     color: whitesmoke;
+    width: 100%;
+    text-align: center;
+    padding: 7px 0px;
     font-family: corbel;
     font-weight: bolder;
+    font-size: 3.75em;
+}
+
+.container
+{
+    text-align: center;
+    padding: 30px;
 }
 
 label{
-    position: relative;
-    left: 20px;
-    margin-top: 30px;
-    font-size: 1.5em;
-    font-weight: 300;
+    /*position: relative;*/
+    margin-top: 10px;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 input{
-    position: relative;
+    /*position: relative;*/
     left: 10px;
     width: 450px;
     margin: 25px 0;
@@ -28,13 +35,13 @@ input{
 }
 
 body{
-    margin: 0;
-
+    margin: 0px 0px;
     font-family: corbel;
+    background-color: white;
 }
 
 button{
-    position: relative;
+    /*position: relative;*/
     left: 15px;
     padding: 10px;
     border: 2px solid black;
@@ -47,11 +54,12 @@ button{
 }
 
 textarea{
-    position: relative;
+    /*position: relative;*/
     left: 10px;
     width: 800px;
     height: 300px;
     padding: 10px 20px;
+    line-height: 25px;
     margin-top: 30px;
     border-radius: 25px;
 }
