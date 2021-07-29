@@ -1,5 +1,56 @@
+h2{
+    text-align: center;
+    padding: 10px 20px;
+    background-color: black;
+    color: whitesmoke;
+    font-family: corbel;
+    font-weight: bolder;
+}
+
+label{
+    position: relative;
+    left: 20px;
+    margin-top: 30px;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+input{
+    position: relative;
+    left: 10px;
+    width: 450px;
+    margin: 25px 0;
+    padding: 10px 10px;
+    border:2px solid black;
+    border-radius: 30px;
+    background-color: whitesmoke;
+}
+
 body{
     margin: 0;
+
     font-family: corbel;
-    color: blueviolet;
+}
+
+button{
+    position: relative;
+    left: 15px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-weight: bold;
+    font-size: 1em;
+    color: whitesmoke;
+    background-color: black;
+}
+
+textarea{
+    position: relative;
+    left: 10px;
+    width: 800px;
+    height: 300px;
+    padding: 10px 20px;
+    margin-top: 30px;
+    border-radius: 25px;
 }
