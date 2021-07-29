@@ -64,10 +64,10 @@ def summarizer(text):
 
     # Getting Sentences with highest scores
     sentences_percent = 0.2
-    sentences_selected = len(sentence_tokens)*sentences_percent
+    sentences_selected = int(len(sentence_tokens)*sentences_percent)
     #print(sentences_selected)
 
-    #heapq.nlargest(selectCount, iterable, keys)
+    #heapq.nlargest(selectCount, iterable, keys )
     summary_sentences = nlargest(sentences_selected, sentence_scores, key = sentence_scores.get)
     #print(summary_sentences)
     final_summary = [word.text for word in summary_sentences]
