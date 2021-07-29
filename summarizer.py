@@ -12,9 +12,10 @@ def summarizer(text):
     stopwords = list(STOP_WORDS)
     #print(stopwords)
 
+    # Loading model for tokenization
     nlp = spacy.load('en_core_web_sm')
 
-    # Saving tokenized sentence
+    # Tokenizing text with spacy
     doc = nlp(text)
 
     tokens = [token.text for token in doc]
@@ -35,7 +36,7 @@ def summarizer(text):
 
     #print(word_frequencies)
 
-    # Normalizing Frequencies
+    # Normalizing Word Frequencies
     max_frequency = max(word_frequencies.values())
     #print(max_frequency)
 
@@ -63,9 +64,10 @@ def summarizer(text):
 
     # Getting Sentences with highest scores
     sentences_percent = 0.2
-    sentences_selected = int(len(sentence_tokens)*sentences_percent)
+    sentences_selected = len(sentence_tokens)*sentences_percent
     #print(sentences_selected)
 
+    #heapq.nlargest(selectCount, iterable, keys)
     summary_sentences = nlargest(sentences_selected, sentence_scores, key = sentence_scores.get)
     #print(summary_sentences)
     final_summary = [word.text for word in summary_sentences]
