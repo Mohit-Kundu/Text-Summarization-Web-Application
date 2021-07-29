@@ -14,9 +14,6 @@ def summarizer(text):
 
     nlp = spacy.load('en_core_web_sm')
 
-    '''url = 'https://en.wikipedia.org/wiki/Natural_language_processing'
-    title, text = scraper(url)'''
-
     # Saving tokenized sentence
     doc = nlp(text)
 

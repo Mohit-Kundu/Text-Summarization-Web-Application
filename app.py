@@ -11,8 +11,7 @@ def index():
         url = request.form.get('url')
         title, text = scraper(url)
         summary = summarizer(text)
-        summary_html = '<textarea>' + summary + '</textarea>'
-        return summary
+        return render_template("index.html", summary = summary)
 
     else: 
         return render_template("index.html")
