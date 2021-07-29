@@ -14,10 +14,10 @@ def scraper(url):
 
     parsed_article = bs.BeautifulSoup(data, 'lxml')
 
-    title = parsed_article.find('h1').text
+    #title = parsed_article.find('h1').text
 
-    # Removing Square Brackets and Extra Spaces
-    def remove_square_brackets(article_text):
+    # Replacing Square Brackets
+    def replace_square_brackets(article_text):
         article_text = re.sub(r'\[[0-9]*\]', ' ', article_text)
         return re.sub(r'\s+', ' ', article_text)
 
@@ -35,6 +35,6 @@ def scraper(url):
         for div in divs:
             article_text += div.text
 
-    body = remove_square_brackets(article_text)
+    body = replace_square_brackets(article_text)
         
-    return title, body
+    return body
