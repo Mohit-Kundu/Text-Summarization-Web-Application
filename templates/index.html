@@ -2,20 +2,25 @@
 <html lang=en>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width'>
+    <meta name='description' content='Text Summarization Web Application'>
+    <meta name='author' content='Mohit Kundu'>
     <link rel='stylesheet' href="{{ url_for('static', filename = 'css/main.css') }}" }>
     <title>Text Summarizer</title>
 </head>
 
 <body>
-    <h2>Text Summarizer</h2>
+    <label class='heading' id='heading'>Text Summarizer</label>
     <div class='container'>
-        <label class='labeL_url'>Paste url of content below</label><br>
-        <form action='#' , method='POST'>
-            <input type='url' name='url' autocomplete = "off" placeholder='https://en.wikipedia.org/wiki/Internet'> <br>
+        <label class='labeL_url'>Paste url of content below</label> <br>
+        <form action='#' method='POST'>
+            <input type='url' name='url' autocomplete='off' placeholder='https://en.wikipedia.org/wiki/Internet'> <br>
             <button name='summarize_btn' class='summarize_btn'>Summarize</button>
-        </form>
+        </form> <br>
+        <label class='article_title'> {{ article_title }} </label>
+        <label class='reading_time'> {{ reading_time }} </label> <br>
+        <h5>Summary</h5>
         <textarea> {{ summary }} </textarea>
     </div>
 </body>
