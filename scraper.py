@@ -2,6 +2,17 @@ import bs4 as bs
 import urllib.request
 import re
 
+'''Removes the citations and square brackets in super script'''
+def remove_brackets(text):
+        text = re.sub(r'\[[0-9]*\]', ' ', text)
+        return re.sub(r'\s+', ' ', text)
+
+'''Calculating reading speed by dividing text length by average reading speed'''
+def estimated_reading_time(text):
+    reading_time = int(len(text)/200)
+    return reading_time
+
+'''Scrapes content from paragraph and div tags of website'''
 def scraper(url):
     article_text = ""
 
@@ -14,12 +25,7 @@ def scraper(url):
 
     parsed_article = bs.BeautifulSoup(data, 'lxml')
 
-    #title = parsed_article.find('h1').text
-
-    # Replacing Square Brackets
-    def replace_square_brackets(article_text):
-        article_text = re.sub(r'\[[0-9]*\]', ' ', article_text)
-        return re.sub(r'\s+', ' ', article_text)
+    title = parsed_article.find('title').text
 
     paragraphs = parsed_article.find_all('p')
 
@@ -35,6 +41,6 @@ def scraper(url):
         for div in divs:
             article_text += div.text
 
-    body = replace_square_brackets(article_text)
+    body = remove_brackets(article_text)
         
-    return body
+    return title, body
