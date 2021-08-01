@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, url_for
-from scraper import scraper
+from scraper import scraper, estimated_reading_time
 from summarizer import summarizer
 
 app = Flask(__name__)
@@ -9,9 +9,11 @@ app.config["JSON_AS_ASCII"] = False
 def index():
     if request.method == 'POST':
         url = request.form.get('url')
-        text = scraper(url)
+        article_title, text = scraper(url)
         summary = summarizer(text)
-        return render_template("index.html", summary = summary)
+        reading_time = estimated_reading_time(summary)
+
+        return render_template("index.html", article_title = article_title, reading_time = reading_time, summary = summary)
 
     else: 
         return render_template("index.html")
