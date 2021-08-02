@@ -1,12 +1,8 @@
-h2{
-    background-color: black;
-    color: whitesmoke;
-    width: 100%;
-    text-align: center;
-    padding: 7px 0px;
+body{
+    margin: 0px 0px;
     font-family: corbel;
-    font-weight: bolder;
-    font-size: 3.75em;
+    background-color:darkslategrey;
+    color: whitesmoke;
 }
 
 .container
@@ -16,32 +12,35 @@ h2{
 }
 
 label{
-    /*position: relative;*/
-    margin-top: 10px;
+   font-family: corbel;
+}
+
+label.paste_label{
+    size: 2em;
+    width: 100%;
+    text-align: center;
+    padding: 7px 0px;
+    font-weight: bolder;
+    font-size: 3.75em;
+}
+
+label.heading{
     font-size: 2em;
     font-weight: bold;
 }
 
 input{
-    /*position: relative;*/
     left: 10px;
     width: 450px;
     margin: 25px 0;
     padding: 10px 10px;
     border:2px solid black;
     border-radius: 30px;
-    background-color: whitesmoke;
+    background-color: slategray;
     outline: none;
 }
 
-body{
-    margin: 0px 0px;
-    font-family: corbel;
-    background-color: white;
-}
-
 button{
-    /*position: relative;*/
     left: 15px;
     padding: 10px;
     border: 2px solid black;
@@ -54,7 +53,6 @@ button{
 }
 
 textarea{
-    /*position: relative;*/
     outline: none;
     left: 10px;
     width: 800px;
