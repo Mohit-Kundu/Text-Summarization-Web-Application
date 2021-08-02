@@ -1,10 +1,6 @@
 import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
 from string import punctuation
-
-# Importing webscraping function from scraper.py
-from scraper import scraper
-
 # Used to rank sentences according sentence scores
 from heapq import nlargest
 

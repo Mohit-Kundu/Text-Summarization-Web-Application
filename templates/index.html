@@ -13,14 +13,14 @@
 <body>
     <label class='heading' id='heading'>Text Summarizer</label>
     <div class='container'>
-        <label class='labeL_url'>Paste url of content below</label> <br>
+        <label class='paste_label'>Paste url of content below</label> <br>
         <form action='#' method='POST'>
             <input type='url' name='url' autocomplete='off' placeholder='https://en.wikipedia.org/wiki/Internet'> <br>
             <button name='summarize_btn' class='summarize_btn'>Summarize</button>
         </form> <br>
         <label class='article_title'> {{ article_title }} </label> <br>
         <label class='reading_time'> {{ reading_time }} </label> <br>
-        <h5>Summary</h5>
+        <h3>Summary</h3>
         <textarea> {{ summary }} </textarea>
     </div>
 </body>
