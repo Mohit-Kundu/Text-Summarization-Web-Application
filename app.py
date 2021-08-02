@@ -9,11 +9,16 @@ app.config["JSON_AS_ASCII"] = False
 def index():
     if request.method == 'POST':
         url = request.form.get('url')
-        article_title, text = scraper(url)
-        summary = summarizer(text)
-        reading_time = estimated_reading_time(summary)
 
-        return render_template("index.html", article_title = article_title, reading_time = reading_time, summary = summary)
+        try:
+            article_title, text = scraper(url)
+            summary = summarizer(text)
+            print(len(summary))
+            reading_time = estimated_reading_time(summary)
+            return render_template("index.html", article_title = article_title, reading_time = reading_time, summary = summary)
+        
+        except TypeError():
+            print('Invalid url entered')
 
     else: 
         return render_template("index.html")
