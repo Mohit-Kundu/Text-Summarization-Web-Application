@@ -1,7 +1,7 @@
 body{
     margin: 0px 0px;
     font-family: corbel;
-    background-color:darkslategrey;
+    background-color: black;
     color: whitesmoke;
 }
 
@@ -21,10 +21,11 @@ label.paste_label{
     text-align: center;
     padding: 7px 0px;
     font-weight: bolder;
-    font-size: 3.75em;
+    font-size: 3.5em;
 }
 
 label.heading{
+    padding-left: 10px;
     font-size: 2em;
     font-weight: bold;
 }
@@ -36,23 +37,30 @@ input{
     padding: 10px 10px;
     border:2px solid black;
     border-radius: 30px;
-    background-color: slategray;
+    background-color: #3a3b3c;
+    color: whitesmoke;
     outline: none;
 }
 
 button{
     left: 15px;
     padding: 10px;
-    border: 2px solid black;
     border-radius: 30px;
     padding: 10px 30px;
     font-weight: bold;
     font-size: 1em;
     color: whitesmoke;
-    background-color: black;
+    background-color:lime;
+}
+
+label.summary_label{
+    text-align: left;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 textarea{
+    padding: 30px;
     outline: none;
     left: 10px;
     width: 800px;
@@ -61,4 +69,7 @@ textarea{
     line-height: 25px;
     margin-top: 30px;
     border-radius: 25px;
+    background-color: #3a3b3c;
+    color: whitesmoke;
+    overflow: auto;
 }
