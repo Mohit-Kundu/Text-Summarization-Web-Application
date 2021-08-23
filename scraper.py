@@ -2,18 +2,19 @@ import bs4 as bs
 import urllib.request
 import re
 
-'''Removes the citations and square brackets in super script'''
 def remove_brackets(text):
+        '''Removes the citations and square brackets in super script from text'''
         text = re.sub(r'\[[0-9]*\]', ' ', text)
         return re.sub(r'\s+', ' ', text)
 
-'''Calculating reading speed by dividing text length by average reading speed'''
 def estimated_reading_time(text):
+    #Calculating reading speed by dividing 
+    #text length by average reading speed
     reading_time = int(len(text)/200)
     return reading_time
 
-'''Scrapes content from paragraph and div tags of website'''
 def scraper(url):
+    '''Scrapes content from paragraph and div tags of website'''
     article_text = ""
 
     user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
