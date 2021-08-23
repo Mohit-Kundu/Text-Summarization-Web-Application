@@ -4,7 +4,19 @@ from string import punctuation
 # Used to rank sentences according sentence scores
 from heapq import nlargest
 
+def estimated_reading_time(text):
+    '''Calculating reading speed by dividing 
+    text length by average reading speed (avg words per pm)'''
+    mins = int(len(text)/200)
+    seconds = int((float(len(text)/200) - mins)*60)
+    reading_time = "( Estimated reading time: {} mins, {} seconds )".format(str(mins),str(seconds))
+    return reading_time
+
 def summarizer(text):
+    '''Summarizes text by tokenizing, creating a word frequency list, 
+        finding sentence scores, and then selecting sentences with 
+        highest sentence scores'''
+
     stopwords = list(STOP_WORDS)
     #print(stopwords)
 
@@ -66,11 +78,7 @@ def summarizer(text):
     #heapq.nlargest(selectCount, iterable, keys )
     summary_sentences = nlargest(sentences_selected, sentence_scores, key = sentence_scores.get)
     #print(summary_sentences)
-    final_summary = [word.text for word in summary_sentences]
-    summary = " ".join(final_summary)
+    summary_sentences = [word.text for word in summary_sentences]
+    summary = " ".join(summary_sentences)
     return summary
-
-    '''Comparing length of original text with summary'''
-    #print(len(text))
-    #print(len(summary))
 

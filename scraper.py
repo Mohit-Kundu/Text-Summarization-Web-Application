@@ -7,12 +7,6 @@ def remove_brackets(text):
         text = re.sub(r'\[[0-9]*\]', ' ', text)
         return re.sub(r'\s+', ' ', text)
 
-def estimated_reading_time(text):
-    #Calculating reading speed by dividing 
-    #text length by average reading speed
-    reading_time = int(len(text)/200)
-    return reading_time
-
 def scraper(url):
     '''Scrapes content from paragraph and div tags of website'''
     article_text = ""

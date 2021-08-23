@@ -13,8 +13,7 @@ def index():
         try:
             article_title, text = scraper(url)
             summary = summarizer(text)
-            print(len(summary))
-            reading_time = estimated_reading_time(summary)
+            reading_time = estimated_reading_time(summary.split())
             return render_template("index.html", article_title = article_title, reading_time = reading_time, summary = summary)
         
         except TypeError():
