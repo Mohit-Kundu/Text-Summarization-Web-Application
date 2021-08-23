@@ -9,8 +9,7 @@ def estimated_reading_time(text):
     text length by average reading speed (avg words per pm)'''
     mins = int(len(text)/200)
     seconds = int((float(len(text)/200) - mins)*60)
-    reading_time = "( Estimated reading time: {} mins, {} seconds )".format(str(mins),str(seconds))
-    return reading_time
+    return "( Estimated reading time: {} mins, {} seconds )".format(str(mins),str(seconds))
 
 def summarizer(text):
     '''Summarizes text by tokenizing, creating a word frequency list, 
