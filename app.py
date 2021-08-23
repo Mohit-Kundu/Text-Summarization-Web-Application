@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, url_for
-from scraper import scraper, estimated_reading_time
-from summarizer import summarizer
+from scraper import scraper
+from summarizer import summarizer, estimated_reading_time
 
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
