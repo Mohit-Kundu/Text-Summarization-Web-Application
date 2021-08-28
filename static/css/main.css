@@ -49,8 +49,18 @@ button{
     padding: 10px 30px;
     font-weight: bold;
     font-size: 1em;
-    color: whitesmoke;
+    color: ivory;
     background-color:lime;
+    outline: none;
+}
+
+button:hover{
+    color:white;
+    transform: scale(1.05);
+}
+
+button:active{
+    transform: translateY(2px);
 }
 
 label.summary_label{
